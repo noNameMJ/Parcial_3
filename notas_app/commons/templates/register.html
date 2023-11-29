@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!--EJEMPLO ADAPTADO DE https://www.w3schools.com/howto/howto_css_login_form.asp -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static '/css/registro.css' %}" >
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Registro</h2>
+        <form  method="POST"> 
+        {% csrf_token %}
+        <div class="container">
+            {{ register_form.as_p }}                    
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        </form>
+        <p class="text-center">Si ya tienes una cuenta, <a href="{% url 'login' %}">login</a> en ese caso.</p>
+        <p class="text-center">Volver a la, <a href="{% url 'index' %}">página principal</a>.</p>
+    </div>
+</body>
+</html>
