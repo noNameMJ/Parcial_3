@@ -2,18 +2,17 @@
 {% load static %}
 
 {% block extrahead %} 
-<title>eliminarProducto</title>
+<title>eliminarNota</title>
 {% endblock extrahead%}
 
 {% block content %} 
-<h1 class="display-3" id="title">Eliminar Producto</h1>
-<p>Elimine los datos del producto</p>
+<h1 class="display-4" id="title">Eliminar nota</h1>
 <form method="POST">
     <!-- Security token by Django -->
     {% csrf_token %}
-    Esta seguro de eliminar este producto?
+    Esta seguro de eliminar esta nota? <br><br>
     <input type="submit" value="Si"  class="btn btn-success"  />
-    <a href="{% url 'gestionProductos' %}"  class="btn btn-danger" >Cancel </a>
+    <a href="{% url 'index' %}"  class="btn btn-danger" >Cancel </a>
 </form> 
 
 

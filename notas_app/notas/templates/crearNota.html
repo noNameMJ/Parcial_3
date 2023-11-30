@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block extrahead %} 
-<title>crearProducto</title>
+<title>crearNota</title>
 {% endblock extrahead%}
 
 {% block content %} 
-<h1 class="display-3" id="title">Nuevo Producto</h1>
-<p>Ingrese los datos del nuevo producto</p>
+<h1 class="display-4" id="title">Nueva nota</h1>
+
 <div class="container formulario">
     <form method="POST" enctype="multipart/form-data">
  
@@ -20,7 +20,7 @@
         </table>
          
         <input type="submit" value="Guardar" class="btn btn-success">
-        <a type="button" class="btn btn-danger" href="{% url 'gestionProductos' %}">Cancelar</a>
+        <a type="button" class="btn btn-danger" href="{% url 'index' %}">Cancelar</a>
     </form>   
 </div>
 

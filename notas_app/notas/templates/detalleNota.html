@@ -7,47 +7,32 @@
 {% endblock extrahead%}
 
 {% block content %} 
-<h1 class="display-4" id="title">Detalle Producto</h1>
-<a type="button" class="btn btn-success" href="{% url 'productosIndex' %}">Volver</a>
+<h1 class="display-4" id="title">Detalle nota</h1>
+<a type="button" class="btn btn-success" href="{% url 'index' %}">Volver</a>
 
 <div class="row">
-    <div class="col col-sm">
-        <img src="{{ producto.imagen.url }}" class="img-fluid rounded mx-auto d-block imagen_producto" alt="Sin Imágen">
-    </div>
+    
     <div class="col col-sm">
         <table class="table">
             <tbody>
+              {%if user.is_staff%}
               <tr>
-                <th scope="row">ID</th>
-                <td>{{ producto.id }}</td>
+                <th scope="row">Usuario</th>
+                <td>{{ nota.ref_user }}</td>
               </tr>
+              {%endif%}
               <tr>
-                <th scope="row">Nombre</th>
-                <td>{{ producto.nombre }}</td>
+                <th scope="row">Título</th>
+                <td>{{ nota.titulo }}</td>
               </tr>
               <tr>
                 <th scope="row">Descripción</th>
-                <td>{{ producto.descripcion }}</td>
+                <td>{{ nota.descripcion }}</td>
               </tr>
+             
               <tr>
-                <th scope="row">Caracteristicas</th>
-                <td>{{ producto.caracteristicas }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Precio</th>
-                <td>{{ producto.precio }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Estado</th>
-                <td>{{ producto.ref_estado.estado }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Categoria</th>
-                <td>{{ producto.ref_categoria.nombre }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Mascota</th>
-                <td>{{ producto.ref_categoria.ref_animal.nombre }}</td>
+                <th scope="row">Fecha Creación</th>
+                <td>{{ nota.fecha_creacion }}</td>
               </tr>
             </tbody>
           </table>

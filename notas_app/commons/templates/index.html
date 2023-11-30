@@ -14,29 +14,35 @@
     </div>	
 	{% endfor %}
 {% endif %}
-<a type="button" class="btn btn-success" href="{% url 'crearNota' %}">Crear Producto</a>
 
-
+{% if user.is_authenticated %}
 <table class="table">
     <thead>
       <tr>
+        {%if user.is_staff%}
+        <th scope="col">Usuario</th>
+        {%endif%}
         <th scope="col">Título</th>
         <th scope="col">Fecha Creación</th>
         <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
-      {% for producto in page_obj %}
+      {% for nota in page_obj %}
+      {%if user == nota.ref_user or user.is_staff%}
       <tr>
-        <th scope="row">{{ producto.id }}</th>
+        {%if user.is_staff%}
+        <td>{{ nota.ref_user }}</td>
+        {%endif%}
         <td>{{ nota.titulo|upper }}</td>
         <td>{{ nota.fecha_creacion }}</td>
         <td>
-          <a type="button-sm" class="btn btn-sm btn-primary" href="{% url 'detalleNota' producto.id %}">Ver</a>
-          <a type="button-sm" class="btn btn-sm btn-primary" href="{% url 'editarNota' producto.id %}">Editar</a>
-          <a type="button-sm" class="btn btn-sm btn-danger" href="{% url 'eliminarNota' producto.id %}">Borrar</a>
+          <a type="button-sm" class="btn btn-sm btn-primary" href="{% url 'detalleNota' nota.id %}">Ver</a>
+          <a type="button-sm" class="btn btn-sm btn-primary" href="{% url 'editarNota' nota.id %}">Editar</a>
+          <a type="button-sm" class="btn btn-sm btn-danger" href="{% url 'eliminarNota' nota.id %}">Borrar</a>
         </td>
       </tr>
+      {%endif%}
       {% endfor %}
     </tbody>
   </table>
@@ -59,4 +65,5 @@
         {% endif %}
     </span>
 </div>
+{% endif %}
 {% endblock content%}

@@ -1,11 +1,11 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 
 from . import views
+from commons.views import index
 
 urlpatterns = [
     #ruta, vista, nombre interno
-    path('crear/',views.crearNota, name='crearNotas'),
-    path('detalle/<id>/',views.detalleNota, name='detalleNotas'),
-    path('editar/<id>/',views.editarNota, name='editarNotas'),
-    path('borrar/<id>/',views.eliminarNota, name='eliminarNotas')
+    path('admin/', admin.site.urls),
+    path('',index, name='index'),
 ]

@@ -10,6 +10,6 @@ class Nota(models.Model):
     ref_user = models.ForeignKey(User,on_delete=models.CASCADE)
     titulo = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=400)
-    fecha_creacion = models.DateTimeField()
+    fecha_creacion = models.DateTimeField(auto_now=True)
 
 
