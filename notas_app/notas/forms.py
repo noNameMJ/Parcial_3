@@ -17,13 +17,11 @@ class NotaForm(forms.ModelForm):
         ]
 
         labels = {
-            #'ref_user':'Usuario',
             'nombre':'Nombre',
             'descripcion':'Descripción',
         }
 
         widgets = {
-            #'ref_user':,
             'nombre':forms.TextInput(attrs={'class':'form-control'}),
             'descripcion':forms.Textarea(attrs={'class':'form-control','rows':4}),
         }
