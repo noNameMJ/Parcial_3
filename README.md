@@ -1,6 +1,9 @@
 # Parcial_3
-
-## Usuarios actales
+##Integrantes
+| Nombre                             | Código      |
+|------------------------------------|-----------------|
+| Marbin Javier Arévalo Guerrero     | 2210053     |
+## Usuarios actuales
 | Usuario   | Contraseña      | Tipo                |
 |-----------|-----------------|---------------------|
 | admin     | admin           | superuser           |
