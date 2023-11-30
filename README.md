@@ -1,5 +1,5 @@
 # Parcial_3
-##Integrantes
+## Integrantes
 | Nombre                             | Código      |
 |------------------------------------|-----------------|
 | Marbin Javier Arévalo Guerrero     | 2210053     |
